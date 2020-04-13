@@ -11,10 +11,7 @@ public class StatsService {
     }
 
     public long calculateAverageSales(long[] purchases) {
-        long sum = 0;
-        for (long purchase : purchases) {
-            sum += purchase;
-        }
+        long sum = calculateSum (purchases);
         return sum / purchases.length;
     }
 
@@ -47,12 +44,7 @@ public class StatsService {
     }
 
     public long findAverageMonthBelow(long[] purchases) {
-        long sum = 0;
-        for (long purchase : purchases) {
-            sum += purchase;
-        }
-        sum = sum / purchases.length;
-
+        long sum = calculateAverageSales(purchases);
         long current = purchases[0];
         long monthMin = 0;
         for (long purchase : purchases) {
@@ -65,12 +57,7 @@ public class StatsService {
 
 
     public long findAverageMonthAbove(long[] purchases) {
-        long sum = 0;
-        for (long purchase : purchases) {
-            sum += purchase;
-        }
-        sum = sum / purchases.length;
-
+        long sum = calculateAverageSales(purchases);
         long current = purchases[0];
         long monthMax = 0;
         for (long purchase : purchases) {
